@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'users/profile'
   devise_scope :user do
     get "users", to: "devise/sessions#new"
   end
@@ -13,4 +14,6 @@ Rails.application.routes.draw do
     sessions: 'users/sessions',
     registrations: 'users/registrations'
    }
+   get '/u/:id', to: 'users#profile', as: 'user'
+
 end
