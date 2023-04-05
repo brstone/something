@@ -10,8 +10,11 @@
     <div class="btn-group float-end">
         <%= link_to "Edit", nil, remote: true, class:"btn btn-warning",
         data: {
+            #since js file is called comments_controller
             controller: "comments",
+            #controllername#actionwewanttodo
             action: "comments#toggleForm",
+            #nameofthecontroller_nameofyourparameter_param
             comments_form_param: "edit-form-#{comment.id}",
             comments_body_param: "comment-body-#{comment.id}",
         } %>
