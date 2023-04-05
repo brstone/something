@@ -6,3 +6,5 @@ So far:
   - Fixed comment editing bugs
   - Dropdown and navbar reflect if a user is logged in or not
   - Stimulus with Turbo
+  - Notice gem for notifications
+  - Ransack gem for search functionality
