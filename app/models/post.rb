@@ -5,4 +5,9 @@ class Post < ApplicationRecord
   belongs_to :user
   #dependent destroy means that if you delete the post you delete all of the comments
   has_many :comments, dependent: :destroy
+  #adding for noticed gem
+  has_noticed_notifications model_name: 'Notification'
+  #a post has many notifications, does it thru user model, and dependent destroy
+  #∴ when user is deleted, the notifications will be as well
+  has_many :notifications, through: :user, dependent: :destroy
 end
