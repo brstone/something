@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'search/index'
+  get 'search', to: 'search#index'
   get 'users/profile'
   devise_scope :user do
     get "users", to: "devise/sessions#new"

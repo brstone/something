@@ -10,4 +10,9 @@ class Post < ApplicationRecord
   #a post has many notifications, does it thru user model, and dependent destroy
   #∴ when user is deleted, the notifications will be as well
   has_many :notifications, through: :user, dependent: :destroy
+
+  #fuck ransack this is getting annoying
+  #def ransackable_attributes(auth_object = nil)
+   # ["body", "created_at", "id", "title", "updated_at", "user_id", "views"]
+  #end
 end
