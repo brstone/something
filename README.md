@@ -18,3 +18,5 @@ So far:
     with suggestions on how to fix it. I've implemented numerous changes, have gone through 
     Ransack's documentation, etc., can't seem to find a fix and have spent too much time on
     it. Will attempt to implement another form or search, possibly with hotwire. Not sure yet.
+    *Update* 04/07/23: didn't switch from ransack because I was able to implement a fix with ransack
+      searching isn't completely fixed (only works on titles currently) but will be expanded later on
