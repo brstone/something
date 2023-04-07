@@ -11,8 +11,11 @@ class Post < ApplicationRecord
   #∴ when user is deleted, the notifications will be as well
   has_many :notifications, through: :user, dependent: :destroy
 
+  has_rich_text :body
+  has_one :content, class_name: 'ActionText::RichText', as: :record, dependent: :destroy 
+
   #fuck ransack this is getting annoying
-  #def ransackable_attributes(auth_object = nil)
-   # ["body", "created_at", "id", "title", "updated_at", "user_id", "views"]
-  #end
+  def self.ransackable_attributes(auth_object = nil)
+    ["title"]
+  end
 end
