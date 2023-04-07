@@ -8,9 +8,6 @@ class ApplicationController < ActionController::Base
         @query = Post.ransack(params[:q])
     end
 
-    def set_search
-        @query = Post.search(params[:q])
-    end
 
     private 
 
