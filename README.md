@@ -1,5 +1,6 @@
 So far:
-  - **04/10/23:** noticed comments weren't visible, will need to do some reformatting later
+  - **04/10/23:** noticed comments weren't visible, will need to do some reformatting later, also found an error when trying to search regarding "truncate_words" call in search#index
+  - ActiveRecord import used to increase speeds
   - Friendly gem for human readable URL slugs
   - Bootstrap components
   - Devise for user accounts and authentication
