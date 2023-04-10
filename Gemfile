@@ -81,3 +81,5 @@ gem "noticed", "~> 1.6"
 
 gem "ransack", "~> 4.0"
 gem "faker"
+
+gem "friendly_id", "~> 5.5"
