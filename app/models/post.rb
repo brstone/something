@@ -9,7 +9,7 @@ class Post < ApplicationRecord
   has_noticed_notifications model_name: 'Notification'
   #a post has many notifications, does it thru user model, and dependent destroy
   #∴ when user is deleted, the notifications will be as well
-  has_many :notifications, through: :user, dependent: :destroy
+  has_many :notifications, through: :user
 
   has_rich_text :body
   has_one :content, class_name: 'ActionText::RichText', as: :record, dependent: :destroy 
