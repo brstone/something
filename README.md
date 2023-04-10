@@ -1,4 +1,6 @@
 So far:
+  - **04/10/23:** noticed comments weren't visible, will need to do some reformatting later
+  - Friendly gem for human readable URL slugs
   - Bootstrap components
   - Devise for user accounts and authentication
   - Displays Post views
