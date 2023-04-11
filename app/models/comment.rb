@@ -9,7 +9,9 @@ class Comment < ApplicationRecord
 
   private 
 
-  def notify_recipient 
+  def notify_recipient
+    #no notification if you're commenting on your own post
+    return if post.user == user
     #post.user since you want to deliver to user of post, otherwise
     #you would get your own notifications
     CommentNotification.with(comment: self, post: post).deliver_later(post.user)

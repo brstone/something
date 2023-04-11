@@ -6,37 +6,35 @@ User.create(
     email: 'test@test.com',
     password: 'test123',
     password_confirmation: 'test123',
-    name: "Test",
+    name: 'Test',
     role: User.roles[:admin])
 User.create(
     email:'brittney@example.com',
     password: 'test123',
     password_confirmation: 'test123',
-    name: "Brittney")
+    name: 'Brittney')
 
-posts = []
-comments = []
 
 elapsed = Benchmark.measure do 
+  posts = []
+  test1 = User.first 
+  brittney = User.second
   100.times do |x|
     puts "creating post #{x}"
     post = Post.new(
             title: "Post #{x}",
             body: "IS THIS THING ON?!",
-            user_id: User.first.id)
-    posts.push(post)
+            user: test1)
   2.times do |y|
     puts "Creating comment #{y} for post #{x}"
-    comment = post.comments.new(
+    post.comments.build(
             body: "This is comment #{x}",
-            user_id: User.second.id,
-            post_id: post.id)
-    comments.push(comment)
+            user_id: brittney)
     end
+    posts.push(post)
   end
+  Post.import(posts, recursive: true) 
 end
 
-Post.import(posts)
-Comment.import(comments)
 
 puts "elapsed time is #{elapsed.real} seconds"
